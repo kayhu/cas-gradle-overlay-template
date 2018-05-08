@@ -41,6 +41,39 @@ repositories {
 
 dependencies {
     compile "org.apereo.cas:cas-server-webapp-tomcat:${project.'cas.version'}@war"
+    compile "org.apereo.cas:cas-server-support-jdbc:${project.'cas.version'}"
+    compile "org.apereo.cas:cas-server-support-redis-ticket-registry:${project.'cas.version'}"
+    compile "org.apereo.cas:cas-server-support-jpa-service-registry:${project.'cas.version'}"
+    compile "mysql:mysql-connector-java:5.1.44"
+
+    providedCompile "org.apereo.cas:cas-server-core:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-monitor:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-authentication:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-services:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-logout:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-audit:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-logging:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-tickets:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-web:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-validation:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-util:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-events:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-events-configuration:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-core-configuration:${project.'cas.version'}"
+
+    providedCompile "org.apereo.cas:cas-server-support-throttle:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-configuration:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-geolocation:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-actions:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-cookie:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-reports:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-themes:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-validation:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-support-pm:${project.'cas.version'}"
+
+    providedCompile "org.apereo.cas:cas-server-webapp-config:${project.'cas.version'}"
+    providedCompile "org.apereo.cas:cas-server-webapp-init:${project.'cas.version'}"
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
 }
 
 task copyConfig(type: Copy) {
@@ -120,12 +153,13 @@ task debug {
                 "-XX:+TieredCompilation",
                 "-XX:TieredStopAtLevel=1",
                 "-Xdebug",
-                "-Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y"
+                "-Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y",
+                "-Dcas.standalone.config.file=D:/code/iakuh/cas-gradle-overlay-template/etc/cas/config/cas.properties"
                 ]
             args = [
-                "build/libs/cas.war",
+                "build/libs/cas.war"
                 ]
-                
+
             println "Started ${commandLine}"
         }
     }
