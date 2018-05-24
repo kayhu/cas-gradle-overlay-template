@@ -3,8 +3,7 @@ import org.jose4j.jwk.OctJwkGenerator
 
 buildscript {
     repositories {
-        mavenLocal()
-        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
     }
     dependencies {
         classpath "org.bitbucket.b_c:jose4j:0.5.6"
@@ -13,6 +12,26 @@ buildscript {
 }
 
 subprojects {
+    group = 'org.iakuh.kauth'
+    version = '1.0-SNAPSHOT'
+
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    eclipse {
+        classpath {
+            downloadSources = true
+            downloadJavadoc = true
+        }
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
     task allDependenciesInsight(type: DependencyInsightReportTask, description: "Produce insight information for all dependencies") {}
     task allDependencies(type: DependencyReportTask, description: "Display a graph of all project dependencies") {}
 }

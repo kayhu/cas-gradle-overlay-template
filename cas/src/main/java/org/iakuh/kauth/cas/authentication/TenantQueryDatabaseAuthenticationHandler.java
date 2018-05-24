@@ -1,4 +1,4 @@
-package org.iakuh.cas.adaptors.jdbc;
+package org.iakuh.kauth.cas.authentication;
 
 import java.security.GeneralSecurityException;
 import java.util.Collections;
@@ -19,7 +19,6 @@ import org.apereo.cas.authentication.exceptions.AccountPasswordMustChangeExcepti
 import org.apereo.cas.authentication.handler.PrincipalNameTransformer;
 import org.apereo.cas.authentication.principal.PrincipalFactory;
 import org.apereo.cas.services.ServicesManager;
-import org.iakuh.cas.authentication.TenantUsernamePasswordCredential;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;

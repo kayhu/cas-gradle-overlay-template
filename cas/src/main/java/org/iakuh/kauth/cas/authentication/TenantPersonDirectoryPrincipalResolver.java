@@ -1,4 +1,4 @@
-//package org.iakuh.cas.authentication.resolvers;
+//package org.iakuh.kauth.cas.authentication;
 //
 //import org.apereo.cas.authentication.Credential;
 //import org.apereo.cas.authentication.principal.Principal;

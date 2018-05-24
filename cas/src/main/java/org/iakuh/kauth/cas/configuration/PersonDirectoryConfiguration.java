@@ -1,6 +1,4 @@
-//package org.iakuh.cas.config;
-//
-//import static org.iakuh.cas.adaptors.jdbc.TenantQueryDatabaseAuthenticationHandler.FIELD_PRINCIPAL_ID;
+//package org.iakuh.kauth.cas.configuration;
 //
 //import com.google.common.cache.Cache;
 //import com.google.common.cache.CacheBuilder;
@@ -28,7 +26,7 @@
 //import org.apereo.services.persondir.support.merger.MultivaluedAttributeMerger;
 //import org.apereo.services.persondir.support.merger.NoncollidingAttributeAdder;
 //import org.apereo.services.persondir.support.merger.ReplacingAttributeAdder;
-//import org.iakuh.cas.authentication.resolvers.TenantPersonDirectoryPrincipalResolver;
+//import org.iakuh.kauth.cas.authentication.TenantPersonDirectoryPrincipalResolver;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Autowired;

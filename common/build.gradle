@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+}
+
+dependencies {
+    compile "org.springframework.security:spring-security-core:${project.'spring.security.version'}"
+    compile "org.springframework.security:spring-security-cas:${project.'spring.security.version'}"
+    compile 'org.jasig.cas.client:cas-client-core:3.4.1'
+}

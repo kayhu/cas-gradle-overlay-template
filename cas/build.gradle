@@ -1,6 +1,6 @@
 apply plugin: 'org.springframework.boot'
-apply from: 'http://dl.bintray.com/scalding/generic/waroverlay.gradle'
-apply from: 'https://raw.githubusercontent.com/apereo/cas/5.1.x/gradle/overrides.gradle'
+apply from: 'waroverlay.gradle'
+apply from: 'overrides.gradle'
 
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -33,7 +33,6 @@ bootRun {
 }
 
 repositories {
-    mavenLocal()
     jcenter()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url 'https://build.shibboleth.net/nexus/content/repositories/releases/' }
@@ -154,7 +153,7 @@ task debug {
                 "-XX:TieredStopAtLevel=1",
                 "-Xdebug",
                 "-Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y",
-                "-Dcas.standalone.config.file=D:/code/iakuh/cas-gradle-overlay-template/etc/cas/config/cas.properties"
+                "-Dcas.standalone.config.file=$projectDir/etc/cas/config/cas.properties"
                 ]
             args = [
                 "build/libs/cas.war"

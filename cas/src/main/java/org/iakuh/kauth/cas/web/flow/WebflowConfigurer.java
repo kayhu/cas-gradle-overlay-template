@@ -1,9 +1,9 @@
-package org.iakuh.cas.web.flow;
+package org.iakuh.kauth.cas.web.flow;
 
 import org.apereo.cas.web.flow.CasWebflowConstants;
 import org.apereo.cas.web.flow.DefaultWebflowConfigurer;
-import org.iakuh.cas.authentication.TenantRememberMeUsernamePasswordCredential;
-import org.iakuh.cas.authentication.TenantUsernamePasswordCredential;
+import org.iakuh.kauth.cas.authentication.TenantRememberMeUsernamePasswordCredential;
+import org.iakuh.kauth.cas.authentication.TenantUsernamePasswordCredential;
 import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.Flow;
 import org.springframework.webflow.engine.ViewState;

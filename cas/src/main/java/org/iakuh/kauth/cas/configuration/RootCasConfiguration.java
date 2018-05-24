@@ -1,4 +1,4 @@
-package org.iakuh.cas.config;
+package org.iakuh.kauth.cas.configuration;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -12,8 +12,8 @@ import org.apereo.cas.configuration.model.support.jdbc.JdbcAuthenticationPropert
 import org.apereo.cas.configuration.support.Beans;
 import org.apereo.cas.services.ServicesManager;
 import org.apereo.cas.web.flow.CasWebflowConfigurer;
-import org.iakuh.cas.adaptors.jdbc.TenantQueryDatabaseAuthenticationHandler;
-import org.iakuh.cas.web.flow.WebflowConfigurer;
+import org.iakuh.kauth.cas.authentication.TenantQueryDatabaseAuthenticationHandler;
+import org.iakuh.kauth.cas.web.flow.WebflowConfigurer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.webflow.definition.registry.FlowDefinitionRegistry;
 import org.springframework.webflow.engine.builder.support.FlowBuilderServices;
 

@@ -10,8 +10,9 @@
     "allowedAttributes": [
       "java.util.ArrayList",
       [
-        "id",
-        "tenantId"
+        "userId",
+        "tenantId",
+        "tenant"
       ]
     ]
   }

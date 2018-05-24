@@ -1,12 +1,13 @@
-package org.iakuh.cas.authentication;
+package org.iakuh.kauth.cas.authentication;
 
 import javax.validation.constraints.Size;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apereo.cas.authentication.UsernamePasswordCredential;
+import org.apereo.cas.authentication.RememberMeUsernamePasswordCredential;
 
-public class TenantUsernamePasswordCredential extends UsernamePasswordCredential {
+public class TenantRememberMeUsernamePasswordCredential extends
+    RememberMeUsernamePasswordCredential {
 
-  private static final long serialVersionUID = -269982963185081437L;
+  private static final long serialVersionUID = 3142885192822590550L;
 
   @Size(min = 1, message = "required.tenant")
   private String tenant;
@@ -30,7 +31,8 @@ public class TenantUsernamePasswordCredential extends UsernamePasswordCredential
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final TenantUsernamePasswordCredential other = (TenantUsernamePasswordCredential) obj;
+    final TenantRememberMeUsernamePasswordCredential other =
+        (TenantRememberMeUsernamePasswordCredential) obj;
     return this.tenant.equals(other.tenant);
   }
 
