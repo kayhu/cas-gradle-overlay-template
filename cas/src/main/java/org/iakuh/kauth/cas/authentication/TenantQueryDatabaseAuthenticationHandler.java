@@ -31,15 +31,12 @@ public class TenantQueryDatabaseAuthenticationHandler extends
 
   private static final Logger LOGGER = LoggerFactory
       .getLogger(TenantQueryDatabaseAuthenticationHandler.class);
-
-  private PasswordEncoder passwordEncoder = NoOpPasswordEncoder.getInstance();
-
-  private PrincipalNameTransformer principalNameTransformer = formUserId -> formUserId;
-
   private final String sql;
   private final String fieldPassword;
   private final String fieldExpired;
   private final String fieldDisabled;
+  private PasswordEncoder passwordEncoder = NoOpPasswordEncoder.getInstance();
+  private PrincipalNameTransformer principalNameTransformer = formUserId -> formUserId;
   private Map<String, String> principalAttributeMap = Collections.emptyMap();
 
   public TenantQueryDatabaseAuthenticationHandler(final String name,

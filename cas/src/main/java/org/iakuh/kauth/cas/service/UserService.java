@@ -21,7 +21,9 @@ public class UserService {
   public UserDetails getUserDetails(String username, String tenant, String domain) {
     User user = userDao.findByUsernameAndTenant(username, tenant);
 
-    if (user == null) return null;
+    if (user == null) {
+      return null;
+    }
 
     List<SimpleGrantedAuthority> authorities = user.getRoles().stream()
         .filter(role -> role.getDomain().getCode().equals(domain))

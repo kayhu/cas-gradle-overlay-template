@@ -50,9 +50,11 @@ public class UserDetailsController {
   }
 
   private static class TokenAccessDeniedException extends RuntimeException {
+
   }
 
   private static class UserDetailsNotFoundException extends RuntimeException {
+
   }
 
 }

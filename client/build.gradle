@@ -17,7 +17,7 @@ dependencies {
     compileOnly "javax.servlet:javax.servlet-api:3.1.0"
 
     testCompile 'junit:junit:4.12'
-    testCompile'org.springframework:spring-test:4.3.11.RELEASE'
+    testCompile 'org.springframework:spring-test:4.3.11.RELEASE'
 }
 
 task sourceJar(type: Jar) {
@@ -35,7 +35,7 @@ publishing {
     }
     repositories {
         maven {
-            if(project.version.endsWith('SNAPSHOT')) {
+            if (project.version.endsWith('-SNAPSHOT')) {
                 url 'http://localhost:8081/repository/maven-snapshots/'
             } else {
                 url 'http://localhost:8081/repository/maven-releases/'

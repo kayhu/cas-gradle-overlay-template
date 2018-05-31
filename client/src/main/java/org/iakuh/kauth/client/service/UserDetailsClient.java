@@ -85,6 +85,13 @@ public class UserDetailsClient implements InitializingBean {
         .target(UserDetailsApi.class, this.url);
   }
 
+  private interface UserDetailsApi {
+
+    @RequestLine("GET /userDetails?username={username}&tenant={tenant}&domain={domain}")
+    UserDetailsInfo getUserDetails(@Param("username") String username,
+        @Param("tenant") String tenant, @Param("domain") String domain);
+  }
+
   private static class TokenRequestInterceptor implements RequestInterceptor {
 
     private String token;
@@ -116,12 +123,5 @@ public class UserDetailsClient implements InitializingBean {
         throw new RuntimeException("Failed to process response body.", e);
       }
     }
-  }
-
-  private interface UserDetailsApi {
-
-    @RequestLine("GET /userDetails?username={username}&tenant={tenant}&domain={domain}")
-    UserDetailsInfo getUserDetails(@Param("username") String username,
-        @Param("tenant") String tenant, @Param("domain") String domain);
   }
 }
